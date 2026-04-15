@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMPÉRIO DIGITAL | Brando01Digital</title>
+    
+    <link rel="icon" href="imperioicon.ico" type="image/x-icon">
+    
     <style>
         :root {
             --primary: #00ff88;
@@ -63,7 +66,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 120px 5% 60px;
+            padding: 80px 5% 60px;
             text-align: center;
             max-width: 1200px;
             margin: 0 auto;
@@ -100,56 +103,16 @@
             font-size: 1.2rem;
             color: #ccc;
             max-width: 700px;
-            margin: 0 auto 50px;
+            margin: 0 auto;
         }
 
-        /* Botão Ultra Foda */
-        .btn-box {
-            position: relative;
-            display: inline-block;
-        }
-
-        .btn-main {
-            background: var(--primary);
-            color: black;
-            padding: 25px 60px;
-            font-size: 1.2rem;
-            font-weight: 900;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-        }
-
-        .btn-main::after {
-            content: "";
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.6), transparent);
-            transform: rotate(45deg);
-            animation: scan 3s infinite;
-        }
-
-        @keyframes scan {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        .btn-main:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px rgba(0, 255, 136, 0.6);
-        }
-
-        /* Grid de Conteúdo */
+        /* Grid de Conteúdo (Proposta movida para cima do botão) */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            padding: 80px 10%;
+            padding: 60px 0; /* Ajustado para caber no Hero */
+            text-align: left; /* Mantém o texto dos cards alinhado à esquerda */
         }
 
         .card {
@@ -194,9 +157,51 @@
             line-height: 1.6;
         }
 
+        /* Botão Ultra Foda */
+        .btn-box {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn-main {
+            background: var(--primary);
+            color: black;
+            padding: 25px 60px;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .btn-main::after {
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.6), transparent);
+            transform: rotate(45deg);
+            animation: scan 3s infinite;
+        }
+
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.6);
+        }
+
         /* Footer */
         footer {
-            padding: 100px 5%;
+            padding: 80px 5% 40px;
             text-align: center;
             border-top: 1px solid var(--border);
         }
@@ -233,33 +238,35 @@
     </nav>
 
     <main class="hero">
-        <div class="badge anim" style="animation-delay: 0.2s;">Método Brando01Digital</div>
-        <h1 class="anim" style="animation-delay: 0.4s;">
+        <div class="badge anim" style="animation-delay: 0.1s;">Método Brando01Digital</div>
+        
+        <h1 class="anim" style="animation-delay: 0.2s;">
             ESTRATÉGIAS DE <span>ELITE DIGITAL</span>
         </h1>
-        <p class="anim" style="animation-delay: 0.6s;">
+        
+        <p class="anim" style="animation-delay: 0.3s;">
             Não é sorte, é engenharia. O sistema validado para criar, escalar e dominar o mercado digital começando do absoluto zero.
         </p>
-        
-        <div class="btn-box anim" style="animation-delay: 0.8s;">
+
+        <section class="grid">
+            <div class="card anim" style="animation-delay: 0.5s;">
+                <h3>01. Tráfego</h3>
+                <p>Esqueça cliques inúteis. Aprenda a comprar dados e transformá-los em ROI positivo todos os dias.</p>
+            </div>
+            <div class="card anim" style="animation-delay: 0.6s;">
+                <h3>02. Copywriting</h3>
+                <p>O poder de converter estranhos em clientes através de scripts psicológicos altamente persuasivos.</p>
+            </div>
+            <div class="card anim" style="animation-delay: 0.7s;">
+                <h3>03. Escala</h3>
+                <p>Sair do amadorismo. Automatize seus processos e faça o sistema trabalhar enquanto você foca na estratégia.</p>
+            </div>
+        </section>
+
+        <div class="btn-box anim" style="animation-delay: 0.9s;">
             <a href="https://pay.kiwify.com.br/NKF2SUc" class="btn-main">Quero entrar no Império</a>
         </div>
     </main>
-
-    <section class="grid">
-        <div class="card anim" style="animation-delay: 1s;">
-            <h3>01. Tráfego</h3>
-            <p>Esqueça cliques inúteis. Aprenda a comprar dados e transformá-los em ROI positivo todos os dias.</p>
-        </div>
-        <div class="card anim" style="animation-delay: 1.2s;">
-            <h3>02. Copywriting</h3>
-            <p>O poder de converter estranhos em clientes através de scripts psicológicos altamente persuasivos.</p>
-        </div>
-        <div class="card anim" style="animation-delay: 1.4s;">
-            <h3>03. Escala</h3>
-            <p>Sair do amadorismo. Automatize seus processos e faça o sistema trabalhar enquanto você foca na estratégia.</p>
-        </div>
-    </section>
 
     <footer>
         <p>Ainda tem dúvidas? Fale com nosso suporte:</p>
