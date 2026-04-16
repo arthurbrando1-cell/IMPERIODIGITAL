@@ -10,9 +10,7 @@
     <style>
         :root {
             --primary: #00ff88;
-            --primary-dark: #00bd65;
             --bg: #050505;
-            --card-bg: rgba(255, 255, 255, 0.03);
             --border: rgba(0, 255, 136, 0.2);
         }
 
@@ -20,290 +18,126 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: var(--bg);
-            color: white;
-            overflow-x: hidden;
             background: radial-gradient(circle at 50% -20%, #004d2c 0%, #050505 50%);
+            color: white;
         }
 
-        /* Efeito de linhas no fundo (Grid) */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: linear-gradient(var(--border) 1px, transparent 1px), 
-                              linear-gradient(90deg, var(--border) 1px, transparent 1px);
-            background-size: 50px 50px;
-            opacity: 0.05;
-            z-index: -1;
-        }
-
-        /* Header */
         nav {
             height: 80px;
             display: flex;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         .logo {
-            font-size: 1.4rem;
             font-weight: 900;
             letter-spacing: 5px;
             color: var(--primary);
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
         }
 
-        /* Hero Section */
         .hero {
-            padding: 80px 5% 60px;
+            padding: 80px 5%;
             text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
-        .badge {
-            background: rgba(0, 255, 136, 0.1);
-            color: var(--primary);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            border: 1px solid var(--primary);
-            display: inline-block;
+        h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
-            text-transform: uppercase;
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
-            font-weight: 900;
-            line-height: 0.9;
-            margin-bottom: 30px;
-            letter-spacing: -2px;
-        }
-
-        .hero h1 span {
-            color: transparent;
-            -webkit-text-stroke: 1px var(--primary);
-            display: block;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
+        p {
             color: #ccc;
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 600px;
+            margin: 0 auto 30px;
         }
 
-        /* Grid de Conteúdo */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 60px 0;
-            text-align: left;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 40px;
-            border-radius: 20px;
-            position: relative;
-            transition: 0.4s;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .card:hover {
-            border-color: var(--primary);
-            background: rgba(0, 255, 136, 0.05);
-            transform: translateY(-10px);
-        }
-
-        .card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 5px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transition: 0.4s;
-        }
-
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .card p {
-            color: #aaa;
-            line-height: 1.6;
-        }
-
-        /* Botão Ultra Foda */
-        .btn-box {
-            position: relative;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .btn-main {
+        .btn {
             background: var(--primary);
             color: black;
-            padding: 25px 60px;
-            font-size: 1.2rem;
-            font-weight: 900;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-        }
-
-        .btn-main::after {
-            content: "";
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.6), transparent);
-            transform: rotate(45deg);
-            animation: scan 3s infinite;
-        }
-
-        @keyframes scan {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        .btn-main:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px rgba(0, 255, 136, 0.6);
-        }
-
-        /* Seção de Afiliados */
-        .affiliate-section {
-            margin-top: 100px;
-            padding: 40px;
-            border: 1px dashed var(--border);
-            border-radius: 20px;
-            background: rgba(0, 255, 136, 0.02);
-        }
-
-        .affiliate-link {
-            color: var(--primary);
-            text-decoration: none;
+            padding: 20px 50px;
             font-weight: bold;
-            border-bottom: 1px solid transparent;
-            transition: 0.3s;
-        }
-
-        .affiliate-link:hover {
-            border-bottom: 1px solid var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            padding: 80px 5% 40px;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        .contact-btn {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: block;
+            border: none;
+            cursor: pointer;
             margin-top: 20px;
         }
 
-        /* Animação Inicial */
-        .anim {
-            opacity: 0;
-            transform: translateY(40px);
-            animation: appear 1s ease forwards;
+        .box {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid var(--border);
         }
 
-        @keyframes appear {
-            to { opacity: 1; transform: translateY(0); }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 250px;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-        }
     </style>
 </head>
+
 <body>
 
-    <nav>
-        <div class="logo">IMPÉRIO DIGITAL</div>
-    </nav>
+<nav>
+    <div class="logo">IMPÉRIO DIGITAL</div>
+</nav>
 
-    <main class="hero">
-        <div class="badge anim" style="animation-delay: 0.1s;">Método Brando01Digital</div>
-        
-        <h1 class="anim" style="animation-delay: 0.2s;">
-            ESTRATÉGIAS DE <span>ELITE DIGITAL</span>
-        </h1>
-        
-        <p class="anim" style="animation-delay: 0.3s;">
-            Não é sorte, é engenharia. O sistema validado para criar, escalar e dominar o mercado digital começando do absoluto zero.
-        </p>
+<section class="hero">
+    <h1>Entre no Império Digital</h1>
+    <p>Aprenda a ganhar dinheiro online com estratégias reais.</p>
 
-        <section class="grid">
-            <div class="card anim" style="animation-delay: 0.5s;">
-                <h3>01. Tráfego</h3>
-                <p>Esqueça cliques inúteis. Aprenda a comprar dados e transformá-los em ROI positivo todos os dias.</p>
-            </div>
-            <div class="card anim" style="animation-delay: 0.6s;">
-                <h3>02. Copywriting</h3>
-                <p>O poder de converter estranhos em clientes através de scripts psicológicos altamente persuasivos.</p>
-            </div>
-            <div class="card anim" style="animation-delay: 0.7s;">
-                <h3>03. Escala</h3>
-                <p>Sair do amadorismo. Automatize seus processos e faça o sistema trabalhar enquanto você foca na estratégia.</p>
-            </div>
-        </section>
+    <button class="btn" onclick="abrirPagamento()">Quero entrar</button>
 
-        <div class="btn-box anim" style="animation-delay: 0.9s;">
-            <a href="https://pay.kiwify.com.br/NKF2SUc" class="btn-main">Quero entrar no Império</a>
-        </div>
+    <div class="box" id="pagamentoBox">
+        <h2>Pagamento via Pix</h2>
+        <p><strong>Valor:</strong> R$ 19,90</p>
+        <p><strong>Chave Pix:</strong> SEUEMAIL@GMAIL.COM</p>
 
-        <section class="affiliate-section anim" style="animation-delay: 1.1s;">
-            <h2 style="font-size: 1.5rem; margin-bottom: 15px;">Seja um Parceiro de Lucros</h2>
-            <p style="font-size: 1rem; color: #aaa; margin-bottom: 20px;">
-                Quer revender nossas estratégias e ganhar comissões de elite? 
-            </p>
-            <a href="https://dashboard.kiwify.com/join/affiliate/Bjgksabe" class="affiliate-link">👉 Clique aqui para solicitar sua afiliação na Kiwify</a>
-        </section>
-    </main>
+        <p style="color:#aaa;">⚠️ Envie o comprovante corretamente. Liberação em até 1 hora.</p>
 
-    <footer>
-        <p>Ainda tem dúvidas? Fale com nosso suporte:</p>
-        <a href="https://wa.me/554796084319" class="contact-btn">+55 47 9608-4319</a>
-        <p style="margin-top: 50px; opacity: 0.3; font-size: 0.8rem;">
-            © 2026 BRANDO01DIGITAL - IMPÉRIO DIGITAL. TODOS OS DIREITOS RESERVADOS.
-        </p>
-    </footer>
+        <input type="text" id="nome" placeholder="Seu nome"><br>
+        <input type="text" id="comprovante" placeholder="Link do comprovante"><br>
+
+        <button class="btn" onclick="enviarPagamento()">Já paguei</button>
+    </div>
+</section>
+
+<script>
+function abrirPagamento() {
+    document.getElementById("pagamentoBox").style.display = "block";
+}
+
+function enviarPagamento() {
+    const nome = document.getElementById("nome").value;
+    const comprovante = document.getElementById("comprovante").value;
+
+    if (!nome || !comprovante) {
+        alert("Preencha tudo!");
+        return;
+    }
+
+    fetch("https://discord.com/api/webhooks/1494389661135536149/-MtbRptFqiSrfh9m3NR41taKwbhPzwTA_QMbawVsdKENKIzQZkLbQhDnjUpWVV6YKJLR", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            content: `💰 NOVO PAGAMENTO\n\n👤 Nome: ${nome}\n📎 Comprovante: ${comprovante}`
+        })
+    });
+
+    alert("Pagamento enviado! Aguarde aprovação.");
+
+    document.getElementById("nome").value = "";
+    document.getElementById("comprovante").value = "";
+}
+</script>
 
 </body>
 </html>
