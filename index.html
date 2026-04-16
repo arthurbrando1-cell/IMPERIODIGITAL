@@ -106,13 +106,13 @@
             margin: 0 auto;
         }
 
-        /* Grid de Conteúdo (Proposta movida para cima do botão) */
+        /* Grid de Conteúdo */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            padding: 60px 0; /* Ajustado para caber no Hero */
-            text-align: left; /* Mantém o texto dos cards alinhado à esquerda */
+            padding: 60px 0;
+            text-align: left;
         }
 
         .card {
@@ -199,6 +199,27 @@
             box-shadow: 0 0 50px rgba(0, 255, 136, 0.6);
         }
 
+        /* Seção de Afiliados */
+        .affiliate-section {
+            margin-top: 100px;
+            padding: 40px;
+            border: 1px dashed var(--border);
+            border-radius: 20px;
+            background: rgba(0, 255, 136, 0.02);
+        }
+
+        .affiliate-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .affiliate-link:hover {
+            border-bottom: 1px solid var(--primary);
+        }
+
         /* Footer */
         footer {
             padding: 80px 5% 40px;
@@ -266,6 +287,14 @@
         <div class="btn-box anim" style="animation-delay: 0.9s;">
             <a href="https://pay.kiwify.com.br/NKF2SUc" class="btn-main">Quero entrar no Império</a>
         </div>
+
+        <section class="affiliate-section anim" style="animation-delay: 1.1s;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 15px;">Seja um Parceiro de Lucros</h2>
+            <p style="font-size: 1rem; color: #aaa; margin-bottom: 20px;">
+                Quer revender nossas estratégias e ganhar comissões de elite? 
+            </p>
+            <a href="https://dashboard.kiwify.com/join/affiliate/Bjgksabe" class="affiliate-link">👉 Clique aqui para solicitar sua afiliação na Kiwify</a>
+        </section>
     </main>
 
     <footer>
